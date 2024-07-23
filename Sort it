@@ -1,0 +1,42 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+class Main {
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++){
+            int n=sc.nextInt();
+            int m=sc.nextInt();
+            int a[]=new int[n];
+            int b[]=new int[m];
+            int c=0;
+            ArrayList<Integer> li=new ArrayList<>();
+            ArrayList<Integer> li1=new ArrayList<>();
+            for(int j1=0;j1<n;j1++){
+                a[j1]=sc.nextInt();
+            }
+            for(int j2=0;j2<m;j2++){
+                b[j2]=sc.nextInt();    
+            }
+            Arrays.sort(b);
+            for(int t1=0;t1<m;t1++){
+                c=b[m-1];
+            }
+            for(int l=0;l<n-c;l++){
+                li.add(a[l]);
+            }
+            for(int l1=n-1;l1>=n-c;l1--){
+                li1.add(a[l1]);
+            }
+            Collections.sort(li1);
+            li.addAll(li1);
+            for(int f=0;f<li.size();f++){
+                 System.out.print(li.get(f)+" ");
+            }  
+            li.clear();
+            li1.clear(); 
+            System.out.println();     
+        }
+        
+    }
+}
